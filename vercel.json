@@ -1,12 +1,24 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
       "source": "/",
-      "destination": "/api/index"
+      "destination": "https://appdownload.modelcolorresearch.club/"
     },
     {
       "source": "/:path*",
-      "destination": "/api/index?path=:path*"
+      "destination": "https://appdownload.modelcolorresearch.club/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "1"
+        }
+      ]
     }
   ]
 }
